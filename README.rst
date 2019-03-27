@@ -17,7 +17,7 @@ pl-pacscopy
 Abstract
 --------
 
-``pacscopy`` is a simple plugin that copies data from open storage to create a new top level ChRIS Feed.
+``pacscopy`` is a simple plugin that copies data from open storage to create a new top level ChRIS Feed. It's core utility is in demonstrating how to create a largely trivial FS plugin/app for the ChRIS system.
 
 Synopsis
 --------
@@ -53,7 +53,11 @@ and run with
 
     pacscopy.py --man /tmp /tmp
 
-to get inline help.
+to get inline help. To copy from one directory to another, simply do
+
+.. code:: bash
+
+    pacscopy.py --dir /some/input/directory /destination/directory
 
 
 Using ``docker run``
