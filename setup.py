@@ -15,12 +15,12 @@ def readme():
 
 setup(
       name             =   'pacscopy',
-      version          =   '1.0.0',
+      version          =   '1.0.1',
       description      =   'copy from (openstorage) to output directory', 
       long_description =   readme(),
       author           =   'Rudolph Pienaar',
       author_email     =   'rudolph.pienaar@gmail.com',
-      url              =   'https://github.com/FNNDSC/pl-z2labelmap',
+      url              =   'https://github.com/FNNDSC/pl-pacscopy',
       packages         =   ['pacscopy'],
       install_requires =   ['chrisapp', 'pudb'],
       test_suite       =   'nose.collector',
