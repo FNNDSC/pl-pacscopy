@@ -77,7 +77,7 @@ class Pacscopy(ChrisApp):
     TYPE                    = 'fs'
     DESCRIPTION             = 'This is a simple application that is really just the `dircopy` plugin with a new name.'
     DOCUMENTATION           = 'http://wiki'
-    VERSION                 = '1.0.1'
+    VERSION                 = '1.0.2'
     ICON                    = '' # url of an icon image
     LICENSE                 = 'Opensource (MIT)'
     MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
@@ -137,7 +137,7 @@ class Pacscopy(ChrisApp):
                             default     = False)
         self.add_argument('--dir', 
                           dest          ='dir', 
-                          type          = str, 
+                          type          = ChrisApp.path, 
                           default       = './', 
                           optional      = True,
                           help          = 'directory in PACS openstorage to be copied')
