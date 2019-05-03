@@ -15,7 +15,7 @@ def readme():
 
 setup(
       name             =   'pacscopy',
-      version          =   '1.0.2',
+      version          =   '1.0.3',
       description      =   'copy from (openstorage) to output directory', 
       long_description =   readme(),
       author           =   'Rudolph Pienaar',
