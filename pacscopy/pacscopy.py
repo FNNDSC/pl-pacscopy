@@ -77,7 +77,7 @@ class Pacscopy(ChrisApp):
     TYPE                    = 'fs'
     DESCRIPTION             = 'This is a simple application that is really just the `dircopy` plugin with a new name.'
     DOCUMENTATION           = 'http://wiki'
-    VERSION                 = '1.0.3'
+    VERSION                 = '1.0.4'
     ICON                    = '' # url of an icon image
     LICENSE                 = 'Opensource (MIT)'
     MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
@@ -94,47 +94,10 @@ class Pacscopy(ChrisApp):
     # called with the --saveoutputmeta flag
     OUTPUT_META_DICT = {}
  
-    def manPage_show(self):
-        """
-        Print some quick help.
-        """
-        print(Gstr_synopsis)
-
-    def metaData_show(self):
-        """
-        Print the plugin meta data
-        """
-        l_metaData  = dir(self)
-        l_classVar  = [x for x in l_metaData if x.isupper() ]
-        for str_var in l_classVar:
-            str_val = getattr(self, str_var)
-            print("%20s: %s" % (str_var, str_val))
-
     def define_parameters(self):
         """
         Define the CLI arguments accepted by this plugin app.
         """
-        self.add_argument('--version',
-                            help        = 'if specified, print version number',
-                            type        = bool,
-                            dest        = 'b_version',
-                            action      = 'store_true',
-                            optional    = True,
-                            default     = False)
-        self.add_argument('--man',
-                            help        = 'if specified, print man page',
-                            type        = bool,
-                            dest        = 'b_man',
-                            action      = 'store_true',
-                            optional    = True,
-                            default     = False)
-        self.add_argument('--meta',
-                            help        = 'if specified, print plugin meta data',
-                            type        = bool,
-                            dest        = 'b_meta',
-                            action      = 'store_true',
-                            optional    = True,
-                            default     = False)
         self.add_argument('--dir', 
                           dest          ='dir', 
                           type          = ChrisApp.path, 
@@ -146,19 +109,6 @@ class Pacscopy(ChrisApp):
         """
         Define the code to be run by this plugin app.
         """
-
-        if options.b_man:
-            self.manPage_show()
-            sys.exit(0)
-
-        if options.b_meta:
-            self.metaData_show()
-            sys.exit(0)
-
-        if options.b_version:
-            print('Plugin Version: %s' % Pacscopy.VERSION)
-            sys.exit(0)
-
         copy_tree(options.dir, options.outputdir)
 
 # ENTRYPOINT
