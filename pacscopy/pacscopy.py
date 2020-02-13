@@ -99,10 +99,9 @@ class Pacscopy(ChrisApp):
         Define the CLI arguments accepted by this plugin app.
         """
         self.add_argument('--dir', 
-                          dest          ='dir', 
-                          type          = ChrisApp.path, 
-                          default       = './', 
-                          optional      = True,
+                          dest          = 'dir', 
+                          type          = ChrisApp.path,  
+                          optional      = False,
                           help          = 'directory in PACS openstorage to be copied')
 
     def run(self, options):
